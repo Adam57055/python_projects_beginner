@@ -4,20 +4,20 @@ import time
 from word import a
 
 name = input("please enter your name :")
-print(f"wellcame {name},"
+print(f"welcome {name},"
       f"time to play Hangman")
 time.sleep(1)
 
 print("start guessing....")
 time.sleep(0.5)
 
-guesses = ""
-turns = 10
-b = random.choice(a)
+guesses = "" #starts empty
+turns = 10 #stores variable
+b = random.choice(a) #randomly selected value from a
 print(b)
 while True:
     guess = input("guess a character: ")
-    guesses += guess
+    guesses += guess #each guess is added into empty list
     if guess not in b:
         turns -= 1
         print("wrong")
@@ -25,11 +25,11 @@ while True:
 
     if turns == 0:
         print("you lose")
-        break
+        break #program ends
 
-    fail = 0
+    fail = 0 #variable is initialized as zero
     for i in b:
-        if i in guesses:
+        if i in guesses: #for amount of guesses
             print(i, end=" ")
         else:
             print("_", end="  ")
