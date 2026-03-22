@@ -1,15 +1,18 @@
+#Imports
 import math
 import tkinter
 
 def calculator():
-    operator = operator_entry.get()
+    operator = operator_entry.get() 
+    #numbers are set as decimals
     try:
         number1 = float(number1_entry.get())
         number2 = float(number2_entry.get())
+    #in case of error
     except:
         ans_lable.config(text="Invalid number! please enter again")
     else:
-
+        #operators
         if operator == "+":
             Addition= number1 + number2
             ans_lable.config(text=f"{Addition}")
